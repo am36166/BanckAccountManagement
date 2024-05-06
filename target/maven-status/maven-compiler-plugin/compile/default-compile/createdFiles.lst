@@ -1,0 +1,13 @@
+com\fsac\entities\Client.class
+com\fsac\entities\Versement.class
+com\fsac\entities\Retrait.class
+com\fsac\entities\CompteCourant.class
+com\fsac\entities\Operation.class
+com\fsac\dao\IDaoClient.class
+metier\ImetierImp.class
+com\fsac\entities\CompteEpargne.class
+util\HibernateUtil.class
+com\fsac\dao\IdaoClientImp.class
+web\controllor.class
+metier\Imetier.class
+com\fsac\entities\Compte.class

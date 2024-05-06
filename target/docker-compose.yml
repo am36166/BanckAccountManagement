@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mon-app-container
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+    environment:
+      HIBERNATE_CONNECTION_URL: jdbc:mysql://mysql:3306/DB_BP
+      HIBERNATE_CONNECTION_USERNAME: root
+      HIBERNATE_CONNECTION_PASSWORD: 
+    volumes:
+      - app-data:/path/to/app/data
+
+  mysql:
+    image: mysql:latest
+    container_name: mysql-container
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"  
+      MYSQL_DATABASE: DB_BP
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+volumes:
+  app-data:
+  mysql-data:
